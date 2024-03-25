@@ -1,0 +1,12 @@
+$mybgcolor:rgb(237, 93, 117);
+$mycolor:white;
+$mypcolor:rgb(153, 9, 9);
+
+h1{
+    background-color: $mybgcolor;
+    color:$mycolor;
+}
+p{
+    background-color: $mybgcolor;
+    color:$mypcolor;
+}

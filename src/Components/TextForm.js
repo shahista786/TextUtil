@@ -32,8 +32,8 @@ export default function TextForm(props) {
   };
   return (
     <>
-      <div>
-        <div className="container">
+      <div className={`container text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+        <div className="container ">
           <h1>{props.heading}</h1>
           <div className="mb-3">
             <label htmlFor="myBox" className="form-label">
@@ -63,16 +63,15 @@ export default function TextForm(props) {
             Remove Extra Spaces
           </button>
         </div>
-      </div>
-
-      <div className="container my-2">
-        <h1>Your text summary</h1>
-        <p>
-          {text.split(" ").length} words and {text.length} characters
-        </p>
-        <p>{0.008 * text.split(" ").length} Minutes to Read</p>
-        <h2>Preview</h2>
-        <p>{text}</p>
+        <div className="container my-2">
+          <h1>Your text summary</h1>
+          <p>
+            {text.split(" ").length} words and {text.length} characters
+          </p>
+          <p>{0.008 * text.split(" ").length} Minutes to Read</p>
+          <h2>Preview</h2>
+          <p>{text}</p>
+        </div>
       </div>
     </>
   );

@@ -6,15 +6,18 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to UpperCase","success")
   };
 
   const handleLOClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to LowerCase","success")
   };
 
   const handleCClick = () => {
     setText("");
+    props.showAlert("Text Erased","success")
   };
 
   const handleOnChange = (event) => {
@@ -25,10 +28,12 @@ export default function TextForm(props) {
     const textArea = document.getElementById("myBox");
     textArea.select();
     navigator.clipboard.writeText(textArea.value);
+    props.showAlert("Text Copied","success")
   }
   const handleRES = () => {
     const newText = text.replace(/\s+/g, ' '); // Replace multiple spaces with a single space
     setText(newText);
+    props.showAlert("White extra Space removed","success")
   };
   return (
     <>

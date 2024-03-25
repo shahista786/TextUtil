@@ -31,25 +31,40 @@ import "./App.css";
 // import About from "./Components/About";
 import NavBar from "./Components/NavBar";
 import TextForm from "./Components/TextForm";
+import Alert from "./Components/Alert";
 
 function App() {
   const [mode,setMode]=useState('light')
+  const [alert,setAlert]=useState(null)
+
+  const showAlert=(messsage,type)=>{
+    setAlert({
+      msg:messsage,
+      type:type
+    })
+    setTimeout(()=>{
+      setAlert(null)
+    },2000)
+  }
   const toggle=()=>{
     if(mode==='light'){
       setMode('dark')
       document.body.style.backgroundColor='black'
+      showAlert("Dark mode has been Enabled","success")
     }
     else{
       setMode('light')
       document.body.style.backgroundColor='white'
+      showAlert("Light mode has been Enabled","success")
     }
   }
   return (
     <>
       <NavBar title="TextUtils" home="Home" about="About" mode={mode} toggle={toggle} />
       {/* <NavBar/> */}
+      <Alert alert={alert}/>
       <div className="container">
-        <TextForm heading="Enter the text to analyze" mode={mode} />
+        <TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert}/>
         {/* <About/> */}
       </div>
     </>

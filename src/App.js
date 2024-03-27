@@ -60,25 +60,14 @@ function App() {
       showAlert("Light mode has been Enabled", "success")
     }
   }
-
-  const red = () => {
-    document.body.style.backgroundColor = 'red'
-
-  }
-  const green = () => {
-    document.body.style.backgroundColor = 'green'
-  }
-  const blue = () => {
-    document.body.style.backgroundColor = 'blue'
-  }
   return (
     <>
       <BrowserRouter>
-        <NavBar title="TextUtils" home="Home" about="About" mode={mode} toggle={toggle} red={red} green={green} blue={blue} />
+        <NavBar title="TextUtils" home="Home" about="About" mode={mode} toggle={toggle}  />
         <Alert alert={alert} />
         <Routes> {/* Wrap your Routes in a Routes element */}
-          <Route path="/" element={<TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/TextForm" element={<TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />} />
+          <Route path="/About" element={<About mode={mode} />} />
         </Routes>
       </BrowserRouter>
     </>

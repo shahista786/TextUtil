@@ -33,11 +33,6 @@ export default function NavBar(props) {
                 </Link>
               </li>
             </ul>
-            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-              <button type="button" class="btn btn-danger" onClick={props.red}>R</button>
-              <button type="button" class="btn btn-success" onClick={props.green} >G</button>
-              <button type="button" class="btn btn-primary"onClick={props.blue}>B</button>
-            </div>
             <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
               <input className="form-check-input" onClick={props.toggle} type="checkbox" id="flexSwitchCheckDefault" />
               <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>

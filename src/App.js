@@ -66,7 +66,7 @@ function App() {
         <NavBar title="TextUtils" home="Home" about="About" mode={mode} toggle={toggle}  />
         <Alert alert={alert} />
         <Routes> {/* Wrap your Routes in a Routes element */}
-          <Route path="/TextForm" element={<TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />} />
+          <Route path="/TextForm" element={<TextForm heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert} />} />
           <Route path="/About" element={<About mode={mode} />} />
         </Routes>
       </BrowserRouter>

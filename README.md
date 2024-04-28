@@ -21,3 +21,4 @@ This is a simple text manipulation tool designed to provide various functionalit
 3. **View Results**: Instantly see the modified text or counts based on the selected operation.
 4. **Copy or Reset**: Copy the modified text to your clipboard or reset the text to its original form as needed.
 
+And Many More...
